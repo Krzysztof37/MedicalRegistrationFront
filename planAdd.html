@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/custom.min.css" />
+	<link rel="stylesheet" href="css/niceselect.css" />
     <link rel="shortcut icon" href="img/favicon.png" />
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -51,16 +52,16 @@
 	<div id="form" class="container">
 	<p style="font-size: larger;">Formularz do planowania pacjenta</p><hr>
 	<form action="http://localhost:8080/plans/add" method="post">
-	<label>Data:   </label>
-	<select name="date"></select><br>
-	<label>Godzina: </label>
-	<select name="time"></select><br>
-	<label>Pacjent:&nbsp  </label>
-	<select name="patient"></select><br>
-	<label>Kabinka:&nbsp  </label>
-	<select name="treatmentStation"></select><br>
-	<label><b style="font-size: larger;"><u>Planowanie automatyczne:</u></b> wybierz na ile dni zaplanować pacjenta</label>
-	<select name="dayNumber">
+	<label style="font-size: larger;">Data:</label><br><br>
+	<select name="date" class="nice-select"></select><br><br>
+	<label style="font-size: larger;" >Godzina: </label><br><br>
+	<select name="time" class="nice-select"></select><br><br>
+	<label style="font-size: larger;" >Pacjent:&nbsp  </label><br><br>
+	<select name="patient" class="nice-select"></select><br><br>
+	<label style="font-size: larger;" >Kabinka:&nbsp  </label><br><br>
+	<select name="treatmentStation" class="nice-select"></select><br><br>
+	<label style="font-size: larger;"><b style="font-size: larger;"><u>Planowanie automatyczne:</u></b> wybierz na ile dni zaplanować pacjenta</label><br><br>
+	<select name="dayNumber" class="nice-select">
 		<option value="1">1</option>
 		<option value="2">2</option>
 		<option value="3">3</option>
@@ -76,9 +77,9 @@
 		<option value="13">13</option>
 		<option value="14">14</option>
 		<option value="15">15</option>
-	</select><br>
+	</select><br><br>
 	
-	<button type="submit">Wyślij</button><hr>
+	<button type="submit" class="button-21">Wyślij</button><hr>
 	<ul id="formul"></ul>
 	</form>
 	</div>

@@ -142,8 +142,55 @@ let form = document.querySelector("form");
     let selectTimeListener = selectAll[1];
     let selectPatientListener = selectAll[2];
     let selectStationListener = selectAll[3];
+
+
+
+        
+    timeOut = setTimeout(function(){
    
-    console.log(selectDateListener)
+
+
+    fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
+        date: selectDateListener.value,
+        time: selectTimeListener.value,
+        idStation: selectStationListener.value,
+        idPatients: selectPatientListener.value
+    }),
+        )
+    .then(function(response){
+        
+        return response.json();
+
+
+
+}).then(function(result){
+
+    let fetchResult = result;
+    let optionsHour = selectTimeListener.children;
+    console.log(fetchResult);
+    for(let i = 0; i< optionsHour.length; i++){
+    optionsHour[i].style.backgroundColor = "red";
+    }
+
+    for(let i = 0; i< fetchResult.length; i++){
+        if(fetchResult[i] == "wolne"){
+
+            optionsHour[i].style.backgroundColor = "green";
+
+        }
+    }
+   
+
+})
+},2000)
+
+
+
+
+
+
+
+   
     
     selectDateListener.addEventListener("change",function(){
         
@@ -157,10 +204,10 @@ let form = document.querySelector("form");
          console.log(selectStationListenerValue);
 
         fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
-            date: selectDateListenerValue,
-            time: selectTimeListenerValue,
-            idStation: selectStationListenerValue,
-            idPatients: selectPatientListenerValue
+            date: selectDateListener.value,
+            time: selectTimeListener.value,
+            idStation: selectStationListener.value,
+            idPatients: selectPatientListener.value
         }),
             )
         .then(function(response){
@@ -194,16 +241,13 @@ let form = document.querySelector("form");
 
 selectPatientListener.addEventListener("change",function(){
         
-    let selectDateListenerValue = selectDateListener.value;
-    let selectTimeListenerValue = selectTimeListener.value;
-    let selectPatientListenerValue = selectPatientListener.value;
-    let selectStationListenerValue = selectStationListener.value;
+  
  
    fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
-       date: selectDateListenerValue,
-       time: selectTimeListenerValue,
-       idStation: selectStationListenerValue,
-       idPatients: selectPatientListenerValue
+       date: selectDateListener.value,
+       time: selectTimeListener.value,
+       idStation: selectStationListener.value,
+       idPatients: selectPatientListener.value
    }),
        )
    .then(function(response){
@@ -237,17 +281,13 @@ selectPatientListener.addEventListener("change",function(){
 
 selectStationListener.addEventListener("change",function(){
         
-    let selectDateListenerValue = selectDateListener.value;
-    let selectTimeListenerValue = selectTimeListener.value;
-    let selectPatientListenerValue = selectPatientListener.value;
-    let selectStationListenerValue = selectStationListener.value;
-  
+   
 
    fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
-       date: selectDateListenerValue,
-       time: selectTimeListenerValue,
-       idStation: selectStationListenerValue,
-       idPatients: selectPatientListenerValue
+       date: selectDateListener.value,
+       time: selectTimeListener.value,
+       idStation: selectStationListener.value,
+       idPatients: selectPatientListener.value
    }),
        )
    .then(function(response){
