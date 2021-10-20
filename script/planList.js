@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }).then(function(result){
 	
 	
-        let tabela = document.getElementById("tabela");
+        let tabela = document.getElementById("table");
         let ul = document.createElement("ul");
         
 	    let array = result;
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
             i = i+4;
             
             
-           li.classList.add("mojaklasa");
+           li.classList.add("myclass");
             
             ul.appendChild(li);
 	        ul.appendChild(hr); 

@@ -10,7 +10,7 @@ return response.json();
 
 let array = result;
 
-let tabela = document.getElementById("tabela");
+let table = document.getElementById("table");
 let ul = document.createElement("ul");
         
 	    
@@ -23,13 +23,13 @@ let ul = document.createElement("ul");
             li.innerText ="Identyfikator stacji: \u00A0"+ array[i].id+ "\u00A0 Nazwa stacji: \u00A0" + array[i].nameStation+ "\u00A0 Procedura: \u00A0 "+array[i].procedure.procedureName;
            
             
-            li.classList.add("mojaklasa");
+            li.classList.add("myclass");
             
             ul.appendChild(li);
 	        ul.appendChild(hr); 
         }
         
- tabela.appendChild(ul);
+ table.appendChild(ul);
 
 
 

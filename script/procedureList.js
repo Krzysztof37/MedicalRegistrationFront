@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }).then(function(result){
 	
 	
-        let tabela = document.getElementById("tabela");
+        let table = document.getElementById("table");
         let ul = document.createElement("ul");
         
 	    let array = result;
@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function(){
             li.innerText ="Nazwa procedury: \u00A0" + array[i].procedureName+ "\u00A0 Czas procedury \u00A0 "+array[i].procedureTime;
            
             
-            li.classList.add("mojaklasa");
+            li.classList.add("myclass");
             
             ul.appendChild(li);
 	        ul.appendChild(hr); 
         }
         
- tabela.appendChild(ul);
+ table.appendChild(ul);
 
     })
 });
