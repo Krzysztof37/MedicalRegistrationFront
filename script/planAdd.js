@@ -47,6 +47,7 @@ for(let i = 0; i<arrayTime.length; i++){
 
 
 })
+let procedureIdForTreatmentStation;
 
 fetch('http://localhost:8080/get/patients').then(function(response){
 
@@ -64,6 +65,8 @@ for(let i = 0; i<arrayPatients.length; i++){
     option.value = arrayPatients[i].id;
     option.innerText = arrayPatients[i].surName;
     selectPatients.appendChild(option);
+
+
 
 }
 
@@ -275,6 +278,64 @@ selectPatientListener.addEventListener("change",function(){
    
 
 })
+
+fetch('http://localhost:8080/patients/getone?'+ new URLSearchParams({
+
+patientId: selectPatientListener.value
+
+
+})).then(function(response){
+
+    return response.json();
+}).then(function(result){
+    let treatmentStationOptions = selectStationListener.children;
+    console.log(treatmentStationOptions);
+
+    for(let i = 0; i<treatmentStationOptions.length; i++){
+        treatmentStationOptions[i].style.backgroundColor = "white";
+    }
+
+    console.log(result);
+    let arrayOfIdProcedures = result;
+
+
+
+    
+    for(let i = 0; i<arrayOfIdProcedures.length; i++){
+
+ 
+    fetch('http://localhost:8080/get/treatmentStation/forPatient?'+ new URLSearchParams({
+
+    procedureId: arrayOfIdProcedures[i].id
+    
+
+    })).then(function(response){
+        return response.json();
+    }).then(function(result){
+
+
+        console.log(result);
+        let treatmentStationOne = result;
+        for(let i = 0; i<treatmentStationOptions.length; i++){
+
+       
+
+            if(treatmentStationOptions[i].innerHTML == treatmentStationOne[0].nameStation){
+            treatmentStationOptions[i].style.backgroundColor = "green";
+            }
+        }
+    
+    
+    
+    
+    })
+}
+
+
+})
+
+
+
 
 })
 
