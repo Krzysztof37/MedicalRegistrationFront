@@ -1,0 +1,19 @@
+{
+  "name": "medregistration",
+  "version": "1.0.0",
+  "description": "program for patients register",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krzysztof37/MedicalRegistrationFront.git"
+  },
+  "author": "KJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krzysztof37/MedicalRegistrationFront/issues"
+  },
+  "homepage": "https://github.com/Krzysztof37/MedicalRegistrationFront#readme"
+}
