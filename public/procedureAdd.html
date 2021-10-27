@@ -53,12 +53,12 @@
 	<p style="font-size: larger;">Formularz dodawania procedury:</p><hr>
 	<form action="https://medical-registration-heroku.herokuapp.com/procedure/add" method="post">
 	<label>Nazwa Procedury</label><br>
-	<input type="text" name="procedureName" class="inputclass"/><br>
+	<input type="text" name="procedureName" class="inputclass" value="Procedury zostały już dodane" readonly/><br>
 	<label>Czas procedury</label><br>
 	<input type="text" name="procedureTime" class="inputclass" value="30" readonly/><br>
 	<p>--</p>
 	
-	<button type="submit" class="button-21">Wyślij</button><hr>
+	<button type="submit" class="button-21" disabled>Wyślij</button><hr>
 	</form>
 	</div>
 

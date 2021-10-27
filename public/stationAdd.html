@@ -53,11 +53,11 @@
 	<p style="font-size: larger;">Formularz dodawania kabinki:</p><hr>
 	<form action="https://medical-registration-heroku.herokuapp.com/stations/add" method="post">
 	<label>Nazwa Procedury</label><br>
-	<input type="text" name="nameStation" class="inputclass"/><br>
+	<input type="text" name="nameStation" class="inputclass" value="kabinki zostały już dodane" readonly/><br>
 	<label>Procedura:</label><br>
 	<select name="procedure" class="nice-select"></select><br><br>
 	
-	<button type="submit" class="button-21">Wyślij</button><hr>
+	<button type="submit" class="button-21" disabled>Wyślij</button><hr>
 	</form>
 	</div>
 
