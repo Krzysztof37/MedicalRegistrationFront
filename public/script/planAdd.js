@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",function(){
     console.log(selectAll);
     
 
-fetch('http://localhost:8080/get/date').then(function(response){
+fetch('https://medical-registration-heroku.herokuapp.com/get/date').then(function(response){
 
 return response.json();
 
@@ -26,7 +26,7 @@ for(let i = 0; i<arrayDate.length; i++){
 
 })
 
-fetch('http://localhost:8080/get/time').then(function(response){
+fetch('https://medical-registration-heroku.herokuapp.com/get/time').then(function(response){
 
 return response.json();
 
@@ -49,7 +49,7 @@ for(let i = 0; i<arrayTime.length; i++){
 })
 let procedureIdForTreatmentStation;
 
-fetch('http://localhost:8080/get/patients').then(function(response){
+fetch('https://medical-registration-heroku.herokuapp.com/get/patients').then(function(response){
 
 return response.json();
 
@@ -78,7 +78,7 @@ for(let i = 0; i<arrayPatients.length; i++){
 
 
 
-fetch('http://localhost:8080/get/treatmentStation').then(function(response){
+fetch('https://medical-registration-heroku.herokuapp.com/get/treatmentStation').then(function(response){
 
 return response.json();
 
@@ -153,7 +153,7 @@ let form = document.querySelector("form");
    
 
 
-    fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
+    fetch('https://medical-registration-heroku.herokuapp.com/check/dateTime?'+ new URLSearchParams({
         date: selectDateListener.value,
         time: selectTimeListener.value,
         idStation: selectStationListener.value,
@@ -206,7 +206,7 @@ let form = document.querySelector("form");
          console.log(selectPatientListenerValue);
          console.log(selectStationListenerValue);
 
-        fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
+        fetch('https://medical-registration-heroku.herokuapp.com/check/dateTime?'+ new URLSearchParams({
             date: selectDateListener.value,
             time: selectTimeListener.value,
             idStation: selectStationListener.value,
@@ -246,7 +246,7 @@ selectPatientListener.addEventListener("change",function(){
         
   
  
-   fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
+   fetch('https://medical-registration-heroku.herokuapp.com/check/dateTime?'+ new URLSearchParams({
        date: selectDateListener.value,
        time: selectTimeListener.value,
        idStation: selectStationListener.value,
@@ -279,7 +279,7 @@ selectPatientListener.addEventListener("change",function(){
 
 })
 
-fetch('http://localhost:8080/patients/getone?'+ new URLSearchParams({
+fetch('https://medical-registration-heroku.herokuapp.com/patients/getone?'+ new URLSearchParams({
 
 patientId: selectPatientListener.value
 
@@ -304,7 +304,7 @@ patientId: selectPatientListener.value
     for(let i = 0; i<arrayOfIdProcedures.length; i++){
 
  
-    fetch('http://localhost:8080/get/treatmentStation/forPatient?'+ new URLSearchParams({
+    fetch('https://medical-registration-heroku.herokuapp.com/get/treatmentStation/forPatient?'+ new URLSearchParams({
 
     procedureId: arrayOfIdProcedures[i].id
     
@@ -344,7 +344,7 @@ selectStationListener.addEventListener("change",function(){
         
    
 
-   fetch('http://localhost:8080/check/dateTime?'+ new URLSearchParams({
+   fetch('https://medical-registration-heroku.herokuapp.com/check/dateTime?'+ new URLSearchParams({
        date: selectDateListener.value,
        time: selectTimeListener.value,
        idStation: selectStationListener.value,

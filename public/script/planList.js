@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    fetch('http://localhost:8080/plans/getall').then(function(response){
+    fetch('https://medical-registration-heroku.herokuapp.com/plans/getall').then(function(response){
 
         return response.json();
 

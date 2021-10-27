@@ -9,7 +9,7 @@ button.addEventListener("click", function(){
     let inputValue = input.value;
 
 
-    fetch('http://localhost:8080/articles/getall?'+ new URLSearchParams ({
+    fetch('https://medical-registration-heroku.herokuapp.com/articles/getall?'+ new URLSearchParams ({
     keyWord: inputValue
 
 
