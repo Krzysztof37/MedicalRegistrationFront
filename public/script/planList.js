@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
             let li = document.createElement("li");
             li.classList.add("toRemove");
             let hr = document.createElement("hr");
-            li.innerHTML = array[i]+" \u00A0 "+array[i+1]+"\u00A0"+ array[i+2]+" \u00A0 "+array[i+3]+"\u00A0"+"<a href='http://localhost:8080/plan/delete?idTreatmentPlan="+array[i+4]+"' class='toRem'>Usuń</a>";
+            li.innerHTML = array[i]+" \u00A0 "+array[i+1]+"\u00A0"+ array[i+2]+" \u00A0 "+array[i+3]+"\u00A0"+"<a href='https://medical-registration-heroku.herokuapp.com/plan/delete?idTreatmentPlan="+array[i+4]+"' class='toRem'>Usuń</a>";
             i = i+4;
             
             
