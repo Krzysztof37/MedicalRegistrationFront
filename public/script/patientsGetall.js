@@ -45,12 +45,11 @@ document.addEventListener("DOMContentLoaded", function(){
          event.preventDefault();
          let href = patientsA[i].getAttribute("href");
          fetch(href).then(function(response){
-             
-         }).then(function(result){
- 
-         patientsLi[i].remove();
-         hr[i].remove();
- 
+            if(response.ok){
+                patientsLi[i].remove();
+                hr[i].remove();
+            } 
+
          })
  
  
