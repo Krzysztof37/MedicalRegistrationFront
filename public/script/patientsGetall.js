@@ -33,34 +33,39 @@ document.addEventListener("DOMContentLoaded", function(){
         
  table.appendChild(ul);
 
+
+ let patientsLi = document.querySelectorAll("li.myclass");
+ let patientsA = document.querySelectorAll("a.toRemove")
+ let hr = document.querySelectorAll("hr");
+ 
+ for(let i = 0; i< patientsA.length; i++){
+ 
+     patientsA[i].addEventListener("click", function(event){
+ 
+         event.preventDefault();
+         let href = patientsA[i].getAttribute("href");
+         fetch(href).then(function(response){
+             
+         }).then(function(result){
+ 
+         patientsLi[i].remove();
+         hr[i].remove();
+ 
+         })
+ 
+ 
+ 
+ 
+     })
+ 
+ 
+ }
+
+        
+
     })
 
-let patientsLi = document.querySelectorAll("li.myclass");
-let patientsA = document.querySelectorAll("a.toRemove")
-let hr = document.querySelectorAll("hr");
-
-for(let i = 0; i< patientsA.length; i++){
-
-    patientsA[i].addEventListener("click", function(event){
-
-        event.preventDefault();
-        let href = patientsA[i].getAttribute("href");
-        fetch(href).then(function(response){
-            
-        }).then(function(result){
-
-        patientsLi[i].remove();
-        hr[i].remove();
-
-        })
-
-
-
-
-    })
-
-
-}
+   
 
 
 
