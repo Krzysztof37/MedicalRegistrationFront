@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
            
         }
             
-            li.innerHTML = li.innerHTML + "<a href='https://medical-registration-heroku.herokuapp.com/patients/delete?patientId="+array[i].id+"' class=toRemove'>Usuń</a>"
+            li.innerHTML = li.innerHTML + "\u00A0 <a href='https://medical-registration-heroku.herokuapp.com/patients/delete?patientId="+array[i].id+"' class=toRemove'>Usuń</a>"
            li.classList.add("myclass");
             
             ul.appendChild(li);
