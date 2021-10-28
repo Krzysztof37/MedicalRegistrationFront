@@ -40,13 +40,10 @@ document.addEventListener("DOMContentLoaded", function(){
         let href = a[i].getAttribute("href");
 
         fetch(href).then(function(response){
-
-        }).then(function(result){
-
-
+            if(response.ok){
             liToRemove[i].remove();
             hrToRemove[i].remove();
-
+            }
         })
 
 
