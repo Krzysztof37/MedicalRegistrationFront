@@ -16,14 +16,15 @@ document.addEventListener("DOMContentLoaded", function(){
             let li = document.createElement("li");
             let hr = document.createElement("hr");
          	
-            li.innerText ="Nazwisko: \u00A0" + array[i].name+ " "+array[i].surName+"\u00A0\u00A0 email: \u00A0 "+array[i].email+ " \u00A0  zabiegi: ";
+            li.innerHTML ="Nazwisko: \u00A0" + array[i].name+ " "+array[i].surName+"\u00A0\u00A0 email: \u00A0 "+array[i].email+ " \u00A0  zabiegi: ";
             
             
             for(let j = 0; j < array[i].procedure.length; j++){
-            li.innerText = li.innerText +" "+ array[i].procedure[j].procedureName;
+            li.innerHTML = li.innerHTML +" "+ array[i].procedure[j].procedureName;
            
         }
             
+            li.innerHTML = li.innerHTML + "<a href='https://medical-registration-heroku.herokuapp.com/patients/delete?patientId="+array[i].id+"' class=toRemove'>Usuń</a>"
            li.classList.add("myclass");
             
             ul.appendChild(li);
@@ -33,4 +34,34 @@ document.addEventListener("DOMContentLoaded", function(){
  table.appendChild(ul);
 
     })
+
+let patientsLi = document.querySelectorAll("li.myclass");
+let patientsA = document.querySelectorAll("a.toRemove")
+let hr = document.querySelectorAll("hr");
+
+for(let i = 0; i< patientsA.length; i++){
+
+    patientsA[i].addEventListener("click", function(event){
+
+        event.preventDefault();
+        let href = patientsA[i].getAttribute("href");
+        fetch(href).then(function(response){
+            
+        }).then(function(result){
+
+        patientsLi[i].remove();
+        hr[i].remove();
+
+        })
+
+
+
+
+    })
+
+
+}
+
+
+
 });
