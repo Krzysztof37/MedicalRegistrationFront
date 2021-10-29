@@ -322,7 +322,7 @@ patientId: selectPatientListener.value
 
        
 
-            if(arrayStations[i].procedure.id == treatmentStationOne[0].id){
+            if(arrayStations[i].procedure.id == treatmentStationOne[0].procedure.id){
             treatmentStationOptions[i].style.backgroundColor = "green";
             }
         }
