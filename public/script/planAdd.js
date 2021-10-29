@@ -76,7 +76,7 @@ for(let i = 0; i<arrayPatients.length; i++){
 
 
 
-
+let arrayStations;
 
 fetch('https://medical-registration-heroku.herokuapp.com/get/treatmentStation').then(function(response){
 
@@ -85,7 +85,7 @@ return response.json();
 
 }).then(function(result){
 
-let arrayStations = result;
+    arrayStations = result;
 let selectStations = selectAll[3];
 
 console.log(arrayStations);
@@ -316,11 +316,11 @@ patientId: selectPatientListener.value
 
         console.log(result);
         let treatmentStationOne = result;
-        for(let i = 0; i<treatmentStationOptions.length; i++){
+        for(let i = 0; i<arrayStations.length; i++){
 
        
 
-            if(treatmentStationOptions[i].value == treatmentStationOne[0].id){
+            if(arrayStations[i].procedure.id == treatmentStationOne[0].id){
             treatmentStationOptions[i].style.backgroundColor = "green";
             }
         }
