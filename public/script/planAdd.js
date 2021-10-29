@@ -315,8 +315,10 @@ patientId: selectPatientListener.value
 
 
         console.log(result);
+        console.log("tutaj jest wynik:");
+        console.log(arrayStations);
         let treatmentStationOne = result;
-        for(let i = 0; i<arrayStations.length; i++){
+        for(let i = 0; i<treatmentStationOptions.length; i++){
 
        
 
