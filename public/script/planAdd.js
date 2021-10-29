@@ -185,6 +185,66 @@ let form = document.querySelector("form");
    
 
 })
+
+fetch('https://medical-registration-heroku.herokuapp.com/patients/getone?'+ new URLSearchParams({
+
+patientId: selectPatientListener.value
+
+
+})).then(function(response){
+
+    return response.json();
+}).then(function(result){
+    let treatmentStationOptions = selectStationListener.children;
+    console.log(treatmentStationOptions);
+
+    for(let i = 0; i<treatmentStationOptions.length; i++){
+        treatmentStationOptions[i].style.backgroundColor = "white";
+    }
+
+    console.log(result);
+    let arrayOfIdProcedures = result;
+
+
+
+    
+    for(let i = 0; i<arrayOfIdProcedures.length; i++){
+
+ 
+    fetch('https://medical-registration-heroku.herokuapp.com/get/treatmentStation/forPatient?'+ new URLSearchParams({
+
+    procedureId: arrayOfIdProcedures[i].id
+    
+
+    })).then(function(response){
+        return response.json();
+    }).then(function(result){
+
+
+        console.log(result);
+       
+        let treatmentStationOne = result;
+        for(let i = 0; i<treatmentStationOptions.length; i++){
+
+       
+
+            if(arrayStations[i].procedure.id == treatmentStationOne[0].procedure.id){
+            treatmentStationOptions[i].style.backgroundColor = "green";
+            }
+        }
+    
+    
+    
+    
+    })
+}
+
+
+})
+
+
+
+
 },2000)
 
 
