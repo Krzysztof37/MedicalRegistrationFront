@@ -320,7 +320,7 @@ patientId: selectPatientListener.value
 
        
 
-            if(treatmentStationOptions[i].innerHTML == treatmentStationOne[0].nameStation){
+            if(treatmentStationOptions[i].value == treatmentStationOne[0].id){
             treatmentStationOptions[i].style.backgroundColor = "green";
             }
         }
